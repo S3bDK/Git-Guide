@@ -2,7 +2,11 @@
 
 Denne guide viser det normale Git-workflow med kommandoer.
 
-## 1. Første opsætning
+## 1. Login og første opsætning
+
+På arbejdspladsen bruger du din **normale AD-konto** via virksomhedens login/SSO.
+
+Hvis Git åbner et browser-login eller beder dig godkende adgang, skal du gennemføre virksomhedens AD/SSO-login.
 
 Tjek at Git er installeret:
 
@@ -10,27 +14,25 @@ Tjek at Git er installeret:
 git --version
 ```
 
-Sæt navn og e-mail:
+Sæt dit navn og din arbejds-e-mail til commits:
 
 ```bash
 git config --global user.name "Dit Navn"
-git config --global user.email "din@email.dk"
+git config --global user.email "din@arbejdsplads.dk"
 ```
+
+> Din Git commit-identitet og dit AD-login er to forskellige ting. `user.name` og `user.email` bestemmer, hvem der står som forfatter på commits.
 
 ---
 
 ## 2. Clone et repository
 
-HTTPS:
+Kopiér repository-adressen fra arbejdspladsens Git-side.
+
+Eksempel med HTTPS:
 
 ```bash
-git clone https://github.com/organisation/project.git
-```
-
-SSH:
-
-```bash
-git clone git@github.com:organisation/project.git
+git clone https://git-server/organisation/project.git
 ```
 
 Gå ind i mappen:
@@ -38,6 +40,8 @@ Gå ind i mappen:
 ```bash
 cd project
 ```
+
+Hvis login bliver vist i browseren, gennemfører du virksomhedens AD/SSO-login.
 
 ---
 
@@ -133,7 +137,9 @@ Efterfølgende:
 git push
 ```
 
-Opret derefter en Pull Request på GitHub.
+Hvis du bliver bedt om login, bruger du arbejdspladsens AD/SSO-login.
+
+Opret derefter en Pull Request på arbejdspladsens Git-side.
 
 ---
 
@@ -192,4 +198,4 @@ Derefter: **Pull Request → Review → Merge**.
 | `git switch BRANCH` | Skift branch |
 | `git switch -c BRANCH` | Opret ny branch |
 | `git log --oneline` | Se commit-historik |
-| `git remote -v` | Se GitHub remote |
+| `git remote -v` | Se remote server |
