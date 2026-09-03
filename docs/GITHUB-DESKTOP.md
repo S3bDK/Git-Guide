@@ -2,17 +2,29 @@
 
 Denne guide viser det normale workflow uden at bruge Git-kommandoer.
 
-## 1. Clone et repository
+## 1. Login
 
-1. Åbn **GitHub Desktop**
-2. Vælg **File → Clone repository**
-3. Find repository'et
-4. Vælg hvor det skal gemmes
-5. Klik **Clone**
+På arbejdspladsen bruger du din **normale AD-konto** via virksomhedens login/SSO.
+
+Når GitHub Desktop åbner browseren for login, skal du gennemføre virksomhedens AD/SSO-login og derefter gå tilbage til GitHub Desktop.
+
+> Brug ikke en privat GitHub-konto, medmindre arbejdspladsen specifikt har bedt dig om det.
 
 ---
 
-## 2. Hent de nyeste ændringer
+## 2. Clone et repository
+
+1. Åbn **GitHub Desktop**
+2. Vælg **File → Clone repository**
+3. Find arbejdspladsens repository
+4. Vælg hvor det skal gemmes
+5. Klik **Clone**
+
+Hvis du bliver bedt om login, bruger du din AD-konto via virksomhedens SSO.
+
+---
+
+## 3. Hent de nyeste ændringer
 
 Klik først:
 
@@ -26,7 +38,7 @@ Gør dette før du starter nyt arbejde.
 
 ---
 
-## 3. Opret en branch
+## 4. Opret en branch
 
 1. Klik på **Current branch**
 2. Klik **New branch**
@@ -48,7 +60,7 @@ docs/update-guide
 
 ---
 
-## 4. Lav dine ændringer
+## 5. Lav dine ændringer
 
 Åbn projektet i din editor og rediger filerne.
 
@@ -60,7 +72,7 @@ Du kan fjerne fluebenet ved filer, som ikke skal med i committet.
 
 ---
 
-## 5. Commit
+## 6. Commit
 
 Nederst til venstre:
 
@@ -76,24 +88,26 @@ Update printer configuration
 
 ---
 
-## 6. Upload ændringer
+## 7. Upload ændringer
 
 Hvis branchen ikke tidligere er uploaded, klik:
 
 **Publish branch**
 
-Hvis branchen allerede findes på GitHub, klik:
+Hvis branchen allerede findes på serveren, klik:
 
 **Push origin**
 
+Hvis login bliver vist, gennemfører du arbejdspladsens AD/SSO-login.
+
 ---
 
-## 7. Opret Pull Request
+## 8. Opret Pull Request
 
 Når ændringerne er pushed:
 
 1. Klik **Create Pull Request**
-2. GitHub åbnes i browseren
+2. Git-siden åbnes i browseren
 3. Kontroller at din branch bliver sammenlignet med `main`
 4. Skriv en kort titel og beskrivelse
 5. Opret Pull Request
@@ -102,7 +116,7 @@ Derefter kan ændringen blive reviewed og merged.
 
 ---
 
-## 8. Efter Pull Request er merged
+## 9. Efter Pull Request er merged
 
 1. Skift **Current branch** til `main`
 2. Klik **Fetch origin**
