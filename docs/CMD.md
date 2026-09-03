@@ -4,9 +4,9 @@ Denne guide viser det normale Git-workflow med kommandoer.
 
 ## 1. Login og første opsætning
 
-På arbejdspladsen bruger du din **normale AD-konto** via virksomhedens login/SSO.
+På arbejdspladsen bruger du din **administrative konto** via virksomhedens login/SSO.
 
-Hvis Git åbner et browser-login eller beder dig godkende adgang, skal du gennemføre virksomhedens AD/SSO-login.
+Hvis Git åbner et browser-login eller beder dig godkende adgang, skal du gennemføre virksomhedens login/SSO med din administrative konto.
 
 Tjek at Git er installeret:
 
@@ -21,7 +21,7 @@ git config --global user.name "Dit Navn"
 git config --global user.email "din@arbejdsplads.dk"
 ```
 
-> Din Git commit-identitet og dit AD-login er to forskellige ting. `user.name` og `user.email` bestemmer, hvem der står som forfatter på commits.
+> Din Git commit-identitet og dit login er to forskellige ting. `user.name` og `user.email` bestemmer, hvem der står som forfatter på commits.
 
 ---
 
@@ -41,7 +41,7 @@ Gå ind i mappen:
 cd project
 ```
 
-Hvis login bliver vist i browseren, gennemfører du virksomhedens AD/SSO-login.
+Hvis login bliver vist i browseren, gennemfører du virksomhedens login/SSO med din administrative konto.
 
 ---
 
@@ -137,7 +137,7 @@ Efterfølgende:
 git push
 ```
 
-Hvis du bliver bedt om login, bruger du arbejdspladsens AD/SSO-login.
+Hvis du bliver bedt om login, bruger du din administrative konto via virksomhedens login/SSO.
 
 Opret derefter en Pull Request på arbejdspladsens Git-side.
 
