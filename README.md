@@ -1,6 +1,16 @@
 # Git Guide
 
-En kort og overskuelig guide til at bruge Git på en arbejdsplads.
+En kort og overskuelig guide til at bruge Git på arbejdspladsen.
+
+## Login
+
+På arbejdspladsen logger du ind med din **normale AD-konto** via virksomhedens login/SSO.
+
+Hvis GitHub Desktop, Git eller browseren beder dig om at logge ind, skal du bruge dit arbejdslogin og følge virksomhedens AD/SSO-login.
+
+> Brug ikke en privat GitHub-konto, medmindre arbejdspladsen specifikt har bedt dig om det.
+
+---
 
 ## Start her
 
@@ -52,7 +62,7 @@ git commit -m "Beskriv ændringen"
 git push -u origin feature/min-aendring
 ```
 
-Derefter oprettes en Pull Request på GitHub.
+Derefter oprettes en Pull Request.
 
 ### GitHub Desktop
 
