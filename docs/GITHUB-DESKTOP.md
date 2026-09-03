@@ -1,30 +1,68 @@
 # GitHub Desktop
 
-Denne guide viser det normale workflow uden at bruge Git-kommandoer.
+Denne guide viser det normale workflow i **GitHub Desktop** på arbejdspladsen.
 
-## 1. Login
+## 1. Første gang du åbner GitHub Desktop
 
-På arbejdspladsen bruger du din **normale AD-konto** via virksomhedens login/SSO.
+Når GitHub Desktop åbnes første gang:
 
-Når GitHub Desktop åbner browseren for login, skal du gennemføre virksomhedens AD/SSO-login og derefter gå tilbage til GitHub Desktop.
+1. Vælg muligheden for, at du **ikke har en GitHub-konto** / vil fortsætte uden at logge ind på GitHub.com.
+2. Vælg derefter at hente et repository fra **internet / URL**.
+3. Åbn arbejdspladsens **Git-server** i din browser.
+4. Log ind på Git-serverens hjemmeside med din normale **AD-konto**.
+5. Find det repository, du skal arbejde med.
+6. Kopier repository'ets **HTTP/HTTPS clone-link**.
 
-> Brug ikke en privat GitHub-konto, medmindre arbejdspladsen specifikt har bedt dig om det.
+Eksempel:
+
+```text
+https://git-server/gruppe/projekt.git
+```
+
+> Brug det link, der står på arbejdspladsens Git-server. Eksemplet ovenfor er kun et eksempel.
 
 ---
 
-## 2. Clone et repository
+## 2. Clone repository'et
 
-1. Åbn **GitHub Desktop**
-2. Vælg **File → Clone repository**
-3. Find arbejdspladsens repository
-4. Vælg hvor det skal gemmes
-5. Klik **Clone**
+I GitHub Desktop:
 
-Hvis du bliver bedt om login, bruger du din AD-konto via virksomhedens SSO.
+1. Vælg **Clone a repository from the Internet** / **Clone repository**.
+2. Vælg fanen/feltet til **URL**.
+3. Indsæt HTTP/HTTPS-linket fra Git-serveren.
+4. Vælg hvor projektet skal gemmes på computeren under **Local path**.
+5. Klik **Clone**.
+6. Når login-vinduet vises, logger du ind med din normale **AD-konto**.
+
+Når login er godkendt, bliver repository'et downloaded til computeren og åbnet i GitHub Desktop.
+
+### Kort version
+
+```text
+Åbn GitHub Desktop
+        ↓
+Vælg at fortsætte uden GitHub.com-konto
+        ↓
+Clone repository fra internet / URL
+        ↓
+Åbn arbejdspladsens Git-server
+        ↓
+Find repository
+        ↓
+Kopier HTTP/HTTPS clone-link
+        ↓
+Indsæt linket i GitHub Desktop
+        ↓
+Klik Clone
+        ↓
+Log ind med AD-konto
+```
 
 ---
 
 ## 3. Hent de nyeste ændringer
+
+Inden du begynder at arbejde, skal du hente eventuelle nye ændringer fra serveren.
 
 Klik først:
 
@@ -40,17 +78,17 @@ Gør dette før du starter nyt arbejde.
 
 ## 4. Opret en branch
 
-1. Klik på **Current branch**
-2. Klik **New branch**
-3. Skriv fx:
+Arbejd normalt ikke direkte på `main`.
+
+1. Klik på **Current branch**.
+2. Klik **New branch**.
+3. Skriv et kort og beskrivende navn, fx:
 
 ```text
 feature/min-aendring
 ```
 
-4. Klik **Create branch**
-
-Eksempler:
+Andre eksempler:
 
 ```text
 feature/new-login
@@ -58,39 +96,48 @@ bugfix/printer-error
 docs/update-guide
 ```
 
+4. Klik **Create branch**.
+
 ---
 
 ## 5. Lav dine ændringer
 
-Åbn projektet i din editor og rediger filerne.
+Åbn projektet i den editor, du normalt bruger, og rediger filerne.
 
-GitHub Desktop viser automatisk de filer, der er blevet ændret, under **Changes**.
+GitHub Desktop viser automatisk ændrede filer under **Changes**.
 
-Klik på en fil for at se præcis hvad der er ændret.
+Her kan du:
 
-Du kan fjerne fluebenet ved filer, som ikke skal med i committet.
+- se hvilke filer der er ændret
+- klikke på en fil og se ændringerne
+- vælge hvilke filer der skal med i dit commit
+
+Fjern fluebenet ved en fil, hvis den ikke skal med i det aktuelle commit.
 
 ---
 
 ## 6. Commit
 
-Nederst til venstre:
+Når ændringerne er klar:
 
-1. Skriv en kort **Summary**
-2. Tilføj eventuelt en længere beskrivelse
-3. Klik **Commit to [branch-navn]**
+1. Kontroller filerne under **Changes**.
+2. Skriv en kort besked i **Summary**.
+3. Tilføj eventuelt en længere beskrivelse.
+4. Klik **Commit to [branch-navn]**.
 
-Eksempel på en god commit-besked:
+Eksempel:
 
 ```text
 Update printer configuration
 ```
 
+Et commit gemmer ændringerne lokalt. De er endnu ikke sendt til Git-serveren.
+
 ---
 
-## 7. Upload ændringer
+## 7. Push ændringer til Git-serveren
 
-Hvis branchen ikke tidligere er uploaded, klik:
+Hvis branchen ikke tidligere er sendt til serveren, klik:
 
 **Publish branch**
 
@@ -98,34 +145,37 @@ Hvis branchen allerede findes på serveren, klik:
 
 **Push origin**
 
-Hvis login bliver vist, gennemfører du arbejdspladsens AD/SSO-login.
+Hvis du bliver bedt om login igen, bruger du din **AD-konto**.
 
 ---
 
 ## 8. Opret Pull Request
 
-Når ændringerne er pushed:
+Hvis arbejdspladsen bruger Pull Requests:
 
-1. Klik **Create Pull Request**
-2. Git-siden åbnes i browseren
-3. Kontroller at din branch bliver sammenlignet med `main`
-4. Skriv en kort titel og beskrivelse
-5. Opret Pull Request
+1. Push først dine ændringer.
+2. Åbn repository'et på Git-serverens hjemmeside.
+3. Find muligheden for at oprette en **Pull Request** eller **Merge Request**.
+4. Kontroller at din branch bliver sammenlignet med `main`.
+5. Skriv en kort titel og beskrivelse.
+6. Opret requesten.
 
-Derefter kan ændringen blive reviewed og merged.
+Derefter kan ændringen blive reviewed og merged til `main`.
 
----
-
-## 9. Efter Pull Request er merged
-
-1. Skift **Current branch** til `main`
-2. Klik **Fetch origin**
-3. Klik **Pull origin**, hvis der er ændringer
-4. Den gamle branch kan derefter slettes, hvis den ikke længere skal bruges
+> Navnet kan være **Pull Request** eller **Merge Request**, afhængigt af hvilken Git-server arbejdspladsen bruger.
 
 ---
 
-# Hurtigt workflow
+## 9. Efter ændringen er merged
+
+1. Skift **Current branch** til `main`.
+2. Klik **Fetch origin**.
+3. Klik **Pull origin**, hvis der er nye ændringer.
+4. Slet eventuelt den gamle lokale branch, når den ikke længere skal bruges.
+
+---
+
+# Normalt workflow
 
 ```text
 Fetch origin / Pull origin
@@ -140,11 +190,11 @@ Commit to branch
         ↓
 Publish branch / Push origin
         ↓
-Create Pull Request
+Pull Request / Merge Request
         ↓
 Review
         ↓
-Merge
+Merge til main
 ```
 
 ---
@@ -162,4 +212,4 @@ Merge
 | Publish branch | `git push -u origin BRANCH` |
 | Push origin | `git push` |
 
-> GitHub Desktop håndterer staging gennem markeringerne ved filerne i **Changes**, så du behøver normalt ikke selv køre `git add`.
+> GitHub Desktop håndterer staging gennem markeringerne ved filerne under **Changes**, så du behøver normalt ikke selv køre `git add`.
