@@ -4,9 +4,9 @@ En kort og overskuelig guide til at bruge Git på arbejdspladsen.
 
 ## Login
 
-På arbejdspladsen logger du ind med din **normale AD-konto** via virksomhedens login/SSO.
+På arbejdspladsen logger du ind med din **administrative konto** via virksomhedens login/SSO.
 
-Hvis GitHub Desktop, Git eller browseren beder dig om at logge ind, skal du bruge dit arbejdslogin og følge virksomhedens AD/SSO-login.
+Hvis GitHub Desktop, Git eller browseren beder dig om at logge ind, skal du bruge din administrative konto og følge virksomhedens login/SSO.
 
 > Brug ikke en privat GitHub-konto, medmindre arbejdspladsen specifikt har bedt dig om det.
 
