@@ -9,7 +9,7 @@ Når GitHub Desktop åbnes første gang:
 1. Vælg muligheden for, at du **ikke har en GitHub-konto** / vil fortsætte uden at logge ind på GitHub.com.
 2. Vælg derefter at hente et repository fra **internet / URL**.
 3. Åbn arbejdspladsens **Git-server** i din browser.
-4. Log ind på Git-serverens hjemmeside med din normale **AD-konto**.
+4. Log ind på Git-serverens hjemmeside med din **administrative konto**.
 5. Find det repository, du skal arbejde med.
 6. Kopier repository'ets **HTTP/HTTPS clone-link**.
 
@@ -32,7 +32,7 @@ I GitHub Desktop:
 3. Indsæt HTTP/HTTPS-linket fra Git-serveren.
 4. Vælg hvor projektet skal gemmes på computeren under **Local path**.
 5. Klik **Clone**.
-6. Når login-vinduet vises, logger du ind med din normale **AD-konto**.
+6. Når login-vinduet vises, logger du ind med din **administrative konto**.
 
 Når login er godkendt, bliver repository'et downloaded til computeren og åbnet i GitHub Desktop.
 
@@ -55,7 +55,7 @@ Indsæt linket i GitHub Desktop
         ↓
 Klik Clone
         ↓
-Log ind med AD-konto
+Log ind med administrativ konto
 ```
 
 ---
@@ -145,7 +145,7 @@ Hvis branchen allerede findes på serveren, klik:
 
 **Push origin**
 
-Hvis du bliver bedt om login igen, bruger du din **AD-konto**.
+Hvis du bliver bedt om login igen, bruger du din **administrative konto**.
 
 ---
 
